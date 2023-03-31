@@ -23,7 +23,7 @@ const Book = () => {
         );
 };
 
-const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/81fyoFoaxlL._AC_UL600_SR600,400_.jpg" alt="Dog Man" />
+const Image = () => <img src="./images/book1.jpg" alt="Dog Man" />
 
 const Title = () => {
     return (
@@ -31,7 +31,15 @@ const Title = () => {
     );
 }
 
-const Author = () => <h4>Dav Pilkey</h4>
+const Author = () => {
+    const inlineStyles = {
+            color: '#617', 
+            fontSize: '0.75rem', 
+            marginTop: '0.5rem'
+        };
+        
+    return <h4 style={inlineStyles}>Dav Pilkey</h4>
+}
 
 // const Greeting = () => {
 //     return React.createElement(
