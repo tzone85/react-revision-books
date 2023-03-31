@@ -3,15 +3,23 @@ import ReactDOM from "react-dom/client"
 
 import './index.css';
 
-const title = 'Dog Man: Twenty Thousand Fleas Under the Sea: A Graphic Novel (Dog Man 11): From the Creator of Captain Underpants';
-const author = 'Dav Pilkey';
-const img = './images/book1.jpg'
+const firstBook = {
+    title : "Dog Man: Twenty Thousand Fleas Under the Sea: A Graphic Novel (Dog Man 11): From the Creator of Captain Underpants",
+    author : "Dav Pilkey",
+    img : "./images/book1.jpg"
+}
+
+const secondBook = {
+    title : "Outlive: The Science and Art of Longevity",
+    author : "Peter Attia MD",
+    img : "https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/71IJiOOyb1L._AC_UL600_SR600,400_.jpg"
+}
 
 const BookList = () => {
     return (
         <section className="booklist">
-            <Book author={author} title={title} img={img} />
-            <Book  author={author} title={title} img={img}/>
+            <Book author={firstBook.author} title={firstBook.title} img={firstBook.img} />
+            <Book  author={secondBook.author} title={secondBook.title} img={secondBook.img}/>
         </section>
     )
 }
