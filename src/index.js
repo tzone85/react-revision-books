@@ -21,7 +21,7 @@ const Book = () => {
             
             <img src="./images/book1.jpg" alt="Dog Man" />
             <h2>{title}</h2>
-            <h4 className="author">{ author.charAt(0).toUpperCase }</h4>
+            <h4 className="author">{ author }</h4>
             <></>
 
         </article>
