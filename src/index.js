@@ -14,31 +14,30 @@ const BookList = () => {
     )
 }
 const Book = () => {
+    const title = 'Dog Man: Twenty Thousand Fleas Under the Sea: A Graphic Novel (Dog Man 11): From the Creator of Captain Underpants';
+    const author = 'Dav Pilkey'
     return (
         <article className="book">
-            <Image />
-            <Title />
-            <Author />
+            
+            <img src="./images/book1.jpg" alt="Dog Man" />
+            <h2>{title}</h2>
+            <h4 className="author">{ author.charAt(0).toUpperCase }</h4>
+            <></>
+
         </article>
         );
 };
 
-const Image = () => <img src="./images/book1.jpg" alt="Dog Man" />
+const Image = () => {
+
+}
 
 const Title = () => {
-    return (
-        <h2>Dog Man: Twenty Thousand Fleas Under the Sea: A Graphic Novel (Dog Man 11): From the Creator of Captain Underpants</h2>
-    );
+   
 }
 
 const Author = () => {
-    const inlineStyles = {
-            color: '#617', 
-            fontSize: '0.75rem', 
-            marginTop: '0.5rem'
-        };
-        
-    return <h4 style={inlineStyles}>Dav Pilkey</h4>
+    
 }
 
 // const Greeting = () => {
