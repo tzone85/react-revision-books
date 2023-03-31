@@ -37,9 +37,9 @@ const BookList = () => {
         </section>
     )
 }
-const Book = ({ img, title, author, children }) => {
+const Book = (props) => {
     
-    // const { img, title, author } = props
+    const { img, title, author, children } = props
     return (
         <article className="book">
             
