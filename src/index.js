@@ -21,6 +21,13 @@ const books = [
 
 
 const BookList = () => {
+
+    const someVal = 'MncediMini'
+
+    const displayValue = () => {
+        console.log(someVal);
+    }
+
     return (
         <section className="booklist">
 
@@ -29,29 +36,28 @@ const BookList = () => {
                 // const {img, title, author, id } = book;
                 
                 return (
-                    <Book { ...book } key={ book.id }/>
+                    <Book { ...book } key={ book.id } displayValue = {displayValue}/>
                     // <Book img={img} title={title} author={author} key={index}/>
                 );
                 
             }) }
+            {/* <SomeComponent someVal={ someVal }/> */}
         </section>
     )
 }
 
 const Book = (props) => {
     
-    const { img, title, author } = props
+    const { img, title, author, displayValue } = props
     // console.log(props);
     
-    const displayTitle = () => {
-        console.log(title)
-    }
+
     return (
         <article className="book">
             
             <img src={ img } alt={title} />
             <h2>{ title }</h2>
-            <button onClick={displayTitle}>display title</button>
+            <button onClick={ displayValue }>click me</button>
             <h4>{ author }</h4>
         </article>
         ); 
