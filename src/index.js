@@ -24,6 +24,8 @@ const BookList = () => {
     return (
         <section className="booklist">
 
+            <EventExamples />
+
             { books.map((book) => {
                 
                 // const {img, title, author, id } = book;
@@ -36,6 +38,39 @@ const BookList = () => {
             }) }
         </section>
     )
+}
+
+const EventExamples =() => {
+
+    // can be outside of this component or a different file but we'll put these functions here
+
+    const handleFormInput = (e) => {
+        console.log('handle form input');
+        console.log(e.target);
+        console.log(e.target.name);
+        console.log(e.target.value);
+    }
+
+    const handleButtonClicked = () => {
+        alert('handle button clicked');
+    }
+
+    const handleFormSubmission = (evt) => {
+        evt.preventDefault();
+        console.log('form submitted');
+    }
+    return <section>
+            <form onSubmit={handleFormSubmission}>
+                <h2>Typical Form</h2>
+                <input 
+                type="text" 
+                name="example" 
+                onChange={handleFormInput}
+                style={{margin: '1rem 0'}}   
+                />
+            </form>
+            <button onClick={handleButtonClicked}>Click me</button>
+        </section>
 }
 
 const Book = (props) => {
