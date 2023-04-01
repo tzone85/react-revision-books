@@ -42,39 +42,24 @@ const BookList = () => {
 
 const EventExamples =() => {
 
-    // can be outside of this component or a different file but we'll put these functions here
-
-    const handleFormInput = (e) => {
-        console.log('handle form input');
-        console.log(e.target);
-        console.log(e.target.name);
-        console.log(e.target.value);
-    }
-
-    const handleButtonClicked = () => {
-        alert('handle button clicked');
-    }
-
-    const handleFormSubmission = (evt) => {
-        evt.preventDefault();
-        console.log('form submitted');
-    }
-    return <section>
-            <form onSubmit={handleFormSubmission}>
+    return (
+        <section>
+            <form onSubmit={() => console.log('on submit handler')}>
                 <h2>Typical Form</h2>
                 <input 
                 type="text" 
                 name="example" 
-                onChange={handleFormInput}
+                onChange={(e) => console.log(e.target.value)}
                 style={{margin: '1rem 0'}}   
                 />
             </form>
-            <button type="submit" onClick={handleFormSubmission}>Submit me</button>
+            <button type="submit" >Submit me</button>  {/*  make sure the type is that of submit  */}
             <div>
-                <button onClick={handleButtonClicked}>Click me</button>
+                <button onClick={() => console.log('click me')}>Click me</button>
             </div>
             
         </section>
+    );
 }
 
 const Book = (props) => {
