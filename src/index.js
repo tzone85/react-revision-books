@@ -17,30 +17,33 @@ const books = [
     }
 ];
 
-const names = ['Mncedi', 'Peter', 'Paul'];
-const newNames = names.map((name) =>{
-    return <h1>{name}</h1>
-});
-
-console.log('NewNames', newNames);
 
 const BookList = () => {
     return (
         <section className="booklist">
-            {newNames}
+
+            { books.map((book) => {
+                
+                const {img, title, author } = book;
+                
+                return (
+                    <Book img={img} title={title} author={author}/>
+                );
+                
+            }) }
         </section>
     )
 }
+
 const Book = (props) => {
     
-    const { img, title, author, children } = props
+    const { img, title, author } = props
     return (
         <article className="book">
             
             <img src={ img } alt={title} />
             <h2>{ title }</h2>
             <h4>{ author }</h4>
-            { children }
         </article>
         );
 };
