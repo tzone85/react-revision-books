@@ -7,13 +7,15 @@ const books = [
     {
         title : "Dog Man: Twenty Thousand Fleas Under the Sea: A Graphic Novel (Dog Man 11): From the Creator of Captain Underpants",
         author : "Dav Pilkey",
-        img : "./images/book1.jpg"
+        img : "./images/book1.jpg",
+        id: 1
     },
 
     {
         title : "Outlive: The Science and Art of Longevity",
         author : "Peter Attia MD",
-        img : "https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/71IJiOOyb1L._AC_UL600_SR600,400_.jpg"
+        img : "https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/71IJiOOyb1L._AC_UL600_SR600,400_.jpg",
+        id: 2
     }
 ];
 
@@ -22,12 +24,13 @@ const BookList = () => {
     return (
         <section className="booklist">
 
-            { books.map((book) => {
+            { books.map((book, index) => {
                 
-                const {img, title, author } = book;
+                const {img, title, author, id } = book;
                 
                 return (
-                    <Book img={img} title={title} author={author}/>
+                    <Book img={img} title={title} author={author} key={id}/>
+                    // <Book img={img} title={title} author={author} key={index}/>
                 );
                 
             }) }
