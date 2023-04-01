@@ -24,8 +24,6 @@ const BookList = () => {
     return (
         <section className="booklist">
 
-            <EventExamples />
-
             { books.map((book) => {
                 
                 // const {img, title, author, id } = book;
@@ -40,41 +38,23 @@ const BookList = () => {
     )
 }
 
-const EventExamples =() => {
-
-    return (
-        <section>
-            <form onSubmit={() => console.log('on submit handler')}>
-                <h2>Typical Form</h2>
-                <input 
-                type="text" 
-                name="example" 
-                onChange={(e) => console.log(e.target.value)}
-                style={{margin: '1rem 0'}}   
-                />
-            </form>
-            <button type="submit" >Submit me</button>  {/*  make sure the type is that of submit  */}
-            <div>
-                <button onClick={() => console.log('click me')}>Click me</button>
-            </div>
-            
-        </section>
-    );
-}
-
 const Book = (props) => {
     
     const { img, title, author } = props
-    console.log(props);
+    // console.log(props);
     
+    const displayTitle = () => {
+        console.log(title)
+    }
     return (
         <article className="book">
             
             <img src={ img } alt={title} />
             <h2>{ title }</h2>
+            <button onClick={displayTitle}>display title</button>
             <h4>{ author }</h4>
         </article>
-        );
+        ); 
 };
 
 const Image = () => {
