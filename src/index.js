@@ -8,20 +8,24 @@ import Book from "./Book";
 const BookList = () => {
 
     return (
-        <section className="booklist">
+        <>
+            <h1>BestSellers</h1>
+            <section className="booklist">
 
-            { books.map((book, index) => { 
-                
-                // const {img, title, author, id } = book;
-                
-                return (
-                    <Book { ...book } key={ book.id } number = {index}/>
-                    // <Book img={img} title={title} author={author} key={index}/>
-                );
-                
-            }) }
-            {/* <SomeComponent someVal={ someVal }/> */}
-        </section>
+                { books.map((book, index) => { 
+                    
+                    // const {img, title, author, id } = book;
+                    
+                    return (
+                        <Book { ...book } key={ book.id } number = {index}/>
+                        // <Book img={img} title={title} author={author} key={index}/>
+                    );
+                    
+                }) }
+                {/* <SomeComponent someVal={ someVal }/> */}
+            </section>
+        </>
+        
     )
 }
 
